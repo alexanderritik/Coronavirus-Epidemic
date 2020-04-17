@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>CoronaVirus-Epidemic!</title>
+  </head>
+  <!-- style="background-color: lightgrey" -->
+  <body >
+
+
+
+    <!-- this is the main container -->
+  <div class="container my-3 ">
+    <button type="button" class="btn btn-primary btn-lg btn-block" style="height: 100px;"><h1 class="display-3 h1">CoronaVirus-Epidemic</h1> </button>
+  </div>
+
+  <div class="container">    
+    <!-- this is wed to maintain second row -->
+   <div class="row">
+    <div class="col"> 
+      <button type="button" class="btn btn-dark btn-lg" style="height: 70px;">
+        <h2>GRAPH </h2></button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-dark btn-lg" style="height: 70px;">
+      <h2>&nbspMAP&nbsp&nbsp</h2></button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-dark btn-lg" style="height: 70px;">
+        <h2>GLOBE </h2></button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-dark btn-lg" style="height: 70px;">
+        <h2>POST & NEWS</h2></button>
+    </div>
+  </div>
+
+<hr>
+
+  <!-- this is choice section of country -->
+  <div align="center" id="selection-div">
+        <select id="selection" name="selection" onchange="select(document.getElementById('selection'));">
+          <option class="selection-category" selected="" disabled="">Select region (by country or US state)</option>
+            <option class="selection-space" disabled="">________________________</option>
+              <option class="selection-option" value="Worldwide">Worldwide</option>
+            <option class="selection-space" disabled="">________________________</option>
+              <option class="selection-option" value="US">United States</option>
+          <option class="selection-category" disabled="">U.S. States</option>
+              <option class="selection-option" value="Alabama">Alabama</option>
+              <option class="selection-option" value="Alaska">Alaska</option>
+              <option class="selection-option" value="Arizona">Arizona</option>
+              <option class="selection-option" value="Arkansas">Arkansas</option>
+              <option class="selection-option" value="California">California</option>
+              <option class="selection-option" value="Colorado">Colorado</option>
+              <option class="selection-option" value="Connecticut">Connecticut</option>
+              <option class="selection-option" value="Delaware">Delaware</option>
+              <option class="selection-option" value="District of Columbia">District Of Columbia</option>
+              <option class="selection-option" value="Florida">Florida</option>
+              <option class="selection-option" value="Georgia">Georgia</option>
+              <option class="selection-option" value="Hawaii">Hawaii</option>
+              <option class="selection-option" value="Idaho">Idaho</option>
+              <option class="selection-option" value="Illinois">Illinois</option>
+              <option class="selection-option" value="Indiana">Indiana</option>
+              <option class="selection-option" value="Iowa">Iowa</option>
+              <option class="selection-option" value="Kansas">Kansas</option>
+              <option class="selection-option" value="Kentucky">Kentucky</option>
+              <option class="selection-option" value="Louisiana">Louisiana</option>
+              <option class="selection-option" value="Maine">Maine</option>
+              <option class="selection-option" value="Maryland">Maryland</option>
+              <option class="selection-option" value="Massachusetts">Massachusetts</option>
+              <option class="selection-option" value="Michigan">Michigan</option>
+              <option class="selection-option" value="Minnesota">Minnesota</option>
+              <option class="selection-option" value="Mississippi">Mississippi</option>
+              <option class="selection-option" value="Missouri">Missouri</option>
+              <option class="selection-option" value="Montana">Montana</option>
+              <option class="selection-option" value="Nebraska">Nebraska</option>
+              <option class="selection-option" value="Nevada">Nevada</option>
+              <option class="selection-option" value="New Hampshire">New Hampshire</option>
+              <option class="selection-option" value="New Jersey">New Jersey</option>
+              <option class="selection-option" value="New Mexico">New Mexico</option>
+              <option class="selection-option" value="New York">New York</option>
+              <option class="selection-option" value="North Carolina">North Carolina</option>
+              <option class="selection-option" value="North Dakota">North Dakota</option>
+              <option class="selection-option" value="Ohio">Ohio</option>
+              <option class="selection-option" value="Oklahoma">Oklahoma</option>
+              <option class="selection-option" value="Oregon">Oregon</option>
+              <option class="selection-option" value="Pennsylvania">Pennsylvania</option>
+              <option class="selection-option" value="Rhode Island">Rhode Island</option>
+              <option class="selection-option" value="South Carolina">South Carolina</option>
+              <option class="selection-option" value="South Dakota">South Dakota</option>
+              <option class="selection-option" value="Tennessee">Tennessee</option>
+              <option class="selection-option" value="Texas">Texas</option>
+              <option class="selection-option" value="Utah">Utah</option>
+              <option class="selection-option" value="Vermont">Vermont</option>
+              <option class="selection-option" value="Virginia">Virginia</option>
+              <option class="selection-option" value="Washington">Washington</option>
+              <option class="selection-option" value="West Virginia">West Virginia</option>
+              <option class="selection-option" value="Wisconsin">Wisconsin</option>
+              <option class="selection-option" value="Wyoming">Wyoming</option>
+            <option class="selection-space" disabled="">________________________</option>
+          <option class="selection-category" disabled="">Countries</option>   
+              <option class="selection-option" value="Afghanistan">Afghanistan</option>
+              <option class="selection-option" value="Albania">Albania</option>
+              <option class="selection-option" value="Algeria">Algeria</option>
+              <option class="selection-option" value="Andorra">Andorra</option>
+              <option class="selection-option" value="Angola">Angola</option>
+              <option class="selection-option" value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option class="selection-option" value="Argentina">Argentina</option>
+              <option class="selection-option" value="Armenia">Armenia</option>
+              <option class="selection-option" value="Aruba">Aruba</option>
+              <option class="selection-option" value="Australia">Australia</option>
+              <option class="selection-option" value="Austria">Austria</option>
+              <option class="selection-option" value="Azerbaijan">Azerbaijan</option>
+              <option class="selection-option" value="Bahamas">Bahamas</option>
+              <option class="selection-option" value="Bahrain">Bahrain</option>
+              <option class="selection-option" value="Bangladesh">Bangladesh</option>
+              <option class="selection-option" value="Barbados">Barbados</option>
+              <option class="selection-option" value="Belarus">Belarus</option>
+              <option class="selection-option" value="Belgium">Belgium</option>
+              <option class="selection-option" value="Belize">Belize</option>
+              <option class="selection-option" value="Benin">Benin</option>
+              <option class="selection-option" value="Bermuda">Bermuda</option>
+              <option class="selection-option" value="Bhutan">Bhutan</option>
+              <option class="selection-option" value="Bolivia">Bolivia</option>
+              <option class="selection-option" value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+              <option class="selection-option" value="Botswana">Botswana</option>
+              <option class="selection-option" value="Brazil">Brazil</option>
+              <option class="selection-option" value="Brunei">Brunei</option>
+              <option class="selection-option" value="Bulgaria">Bulgaria</option>
+              <option class="selection-option" value="Burkina Faso">Burkina Faso</option>
+              <option class="selection-option" value="Burundi">Burundi</option>
+              <option class="selection-option" value="Cabo Verde">Cabo Verde</option>
+              <option class="selection-option" value="Cambodia">Cambodia</option>
+              <option class="selection-option" value="Cameroon">Cameroon</option>
+              <option class="selection-option" value="Canada">Canada</option>
+              <option class="selection-option" value="Central African Republic">Central African Republic</option>
+              <option class="selection-option" value="Chad">Chad</option>
+              <option class="selection-option" value="Chile">Chile</option>
+              <option class="selection-option" value="China">China</option>
+              <option class="selection-option" value="Colombia">Colombia</option>
+              <option class="selection-option" value="Comoros">Comoros</option>
+              <option class="selection-option" value="Congo">Congo</option>
+              <option class="selection-option" value="Congo (Brazzaville)">Congo (Brazzaville)</option>
+              <option class="selection-option" value="Congo (Kinshasa)">Congo (Kinshasa)</option>
+              <option class="selection-option" value="Costa Rica">Costa Rica</option>
+              <option class="selection-option" value="Cote D'ivoire">Cote D'ivoire</option>
+              <option class="selection-option" value="Croatia">Croatia</option>
+              <option class="selection-option" value="Diamond Princess">(Cruise ship) Diamond Princess</option>
+              <option class="selection-option" value="MS Zaandam">(Cruise ship) MS Zaandam</option>
+              <option class="selection-option" value="Cuba">Cuba</option>
+              <option class="selection-option" value="Cyprus">Cyprus</option>
+              <option class="selection-option" value="Czech Republic">Czech Republic</option>
+              <option class="selection-option" value="Denmark">Denmark</option>
+              <option class="selection-option" value="Djibouti">Djibouti</option>
+              <option class="selection-option" value="Dominica">Dominica</option>
+              <option class="selection-option" value="Dominican Republic">Dominican Republic</option>
+              <option class="selection-option" value="Ecuador">Ecuador</option>
+              <option class="selection-option" value="Egypt">Egypt</option>
+              <option class="selection-option" value="El Salvador">El Salvador</option>
+              <option class="selection-option" value="Equatorial Guinea">Equatorial Guinea</option>
+              <option class="selection-option" value="Eritrea">Eritrea</option>
+              <option class="selection-option" value="Estonia">Estonia</option>
+              <option class="selection-option" value="Eswatini">Eswatini (Swaziland)</option>
+              <option class="selection-option" value="Ethiopia">Ethiopia</option>
+              <option class="selection-option" value="Fiji">Fiji</option>
+              <option class="selection-option" value="Finland">Finland</option>
+              <option class="selection-option" value="France">France</option>
+              <option class="selection-option" value="Gabon">Gabon</option>
+              <option class="selection-option" value="Gambia">Gambia</option>
+              <option class="selection-option" value="Georgia">Georgia</option>
+              <option class="selection-option" value="Germany">Germany</option>
+              <option class="selection-option" value="Ghana">Ghana</option>
+              <option class="selection-option" value="Greece">Greece</option>
+              <option class="selection-option" value="Greenland">Greenland</option>
+              <option class="selection-option" value="Grenada">Grenada</option>
+              <option class="selection-option" value="Guatemala">Guatemala</option>
+              <option class="selection-option" value="Guinea">Guinea</option>
+              <option class="selection-option" value="Guinea-bissau">Guinea-bissau</option>
+              <option class="selection-option" value="Guyana">Guyana</option>
+              <option class="selection-option" value="Haiti">Haiti</option>
+              <option class="selection-option" value="Holy See">Holy See (Vatican City State)</option>
+              <option class="selection-option" value="Honduras">Honduras</option>
+              <option class="selection-option" value="Hungary">Hungary</option>
+              <option class="selection-option" value="Iceland">Iceland</option>
+              <option class="selection-option" value="India">India</option>
+              <option class="selection-option" value="Indonesia">Indonesia</option>
+              <option class="selection-option" value="Iran">Iran</option>
+              <option class="selection-option" value="Iraq">Iraq</option>
+              <option class="selection-option" value="Ireland">Ireland</option>
+              <option class="selection-option" value="Israel">Israel</option>
+              <option class="selection-option" value="Italy">Italy</option>
+              <option class="selection-option" value="Jamaica">Jamaica</option>
+              <option class="selection-option" value="Japan">Japan</option>
+              <option class="selection-option" value="Jordan">Jordan</option>
+              <option class="selection-option" value="Kazakhstan">Kazakhstan</option>
+              <option class="selection-option" value="Kenya">Kenya</option>
+              <option class="selection-option" value="Korea, North">Korea (North)</option>
+              <option class="selection-option" value="Korea, South">Korea (South)</option>
+              <option class="selection-option" value="Kosova">Kosovo</option>
+              <option class="selection-option" value="Kuwait">Kuwait</option>
+              <option class="selection-option" value="Kyrgyzstan">Kyrgyzstan</option>
+              <option class="selection-option" value="Laos">Laos</option>
+              <option class="selection-option" value="Latvia">Latvia</option>
+              <option class="selection-option" value="Lebanon">Lebanon</option>
+              <option class="selection-option" value="Lesotho">Lesotho</option>
+              <option class="selection-option" value="Liberia">Liberia</option>
+              <option class="selection-option" value="Libya">Libya</option>
+              <option class="selection-option" value="Liechtenstein">Liechtenstein</option>
+              <option class="selection-option" value="Lithuania">Lithuania</option>
+              <option class="selection-option" value="Luxembourg">Luxembourg</option>
+              <option class="selection-option" value="North Macedonia">Macedonia (North)</option>
+              <option class="selection-option" value="Madagascar">Madagascar</option>
+              <option class="selection-option" value="Malaysia">Malaysia</option>
+              <option class="selection-option" value="Maldives">Maldives</option>
+              <option class="selection-option" value="Mali">Mali</option>
+              <option class="selection-option" value="Malta">Malta</option>
+              <option class="selection-option" value="Mauritania">Mauritania</option>
+              <option class="selection-option" value="Mauritius">Mauritius</option>
+              <option class="selection-option" value="Mexico">Mexico</option>
+              <option class="selection-option" value="Moldova">Moldova</option>
+              <option class="selection-option" value="Monaco">Monaco</option>
+              <option class="selection-option" value="Mongolia">Mongolia</option>
+              <option class="selection-option" value="Montenegro">Montenegro</option>
+              <option class="selection-option" value="Morocco">Morocco</option>
+              <option class="selection-option" value="Mozambique">Mozambique</option>
+              <option class="selection-option" value="Burma">Myanmar (Burma)</option>
+              <option class="selection-option" value="Namibia">Namibia</option>
+              <option class="selection-option" value="Nepal">Nepal</option>
+              <option class="selection-option" value="Netherlands">Netherlands</option>
+              <option class="selection-option" value="New Zealand">New Zealand</option>
+              <option class="selection-option" value="Nicaragua">Nicaragua</option>
+              <option class="selection-option" value="Niger">Niger</option>
+              <option class="selection-option" value="Nigeria">Nigeria</option>
+              <option class="selection-option" value="Norway">Norway</option>
+              <option class="selection-option" value="Oman">Oman</option>
+              <option class="selection-option" value="Pakistan">Pakistan</option>
+              <option class="selection-option" value="West Bank and Gaza">Palestinian Territory, Occupied (West Bank &amp; Gaza)</option>
+              <option class="selection-option" value="Panama">Panama</option>
+              <option class="selection-option" value="Papua New Guinea">Papua New Guinea</option>
+              <option class="selection-option" value="Paraguay">Paraguay</option>
+              <option class="selection-option" value="Peru">Peru</option>
+              <option class="selection-option" value="Philippines">Philippines</option>
+              <option class="selection-option" value="Poland">Poland</option>
+              <option class="selection-option" value="Portugal">Portugal</option>
+              <option class="selection-option" value="Qatar">Qatar</option>
+              <option class="selection-option" value="Romania">Romania</option>
+              <option class="selection-option" value="Russia">Russia</option>
+              <option class="selection-option" value="Rwanda">Rwanda</option>
+              <option class="selection-option" value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+              <option class="selection-option" value="Saint Lucia">Saint Lucia</option>
+              <option class="selection-option" value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+              <option class="selection-option" value="San Marino">San Marino</option>
+              <option class="selection-option" value="Saudi Arabia">Saudi Arabia</option>
+              <option class="selection-option" value="Senegal">Senegal</option>
+              <option class="selection-option" value="Serbia">Serbia</option>
+              <option class="selection-option" value="Seychelles">Seychelles</option>
+              <option class="selection-option" value="Sierra Leone">Sierra Leone</option>
+              <option class="selection-option" value="Singapore">Singapore</option>
+              <option class="selection-option" value="Slovakia">Slovakia</option>
+              <option class="selection-option" value="Slovenia">Slovenia</option>
+              <option class="selection-option" value="Solomon Islands">Solomon Islands</option>
+              <option class="selection-option" value="Somalia">Somalia</option>
+              <option class="selection-option" value="South Africa">South Africa</option>
+              <option class="selection-option" value="Spain">Spain</option>
+              <option class="selection-option" value="Sri Lanka">Sri Lanka</option>
+              <option class="selection-option" value="Sudan">Sudan</option>
+              <option class="selection-option" value="Suriname">Suriname</option>
+              <option class="selection-option" value="Sweden">Sweden</option>
+              <option class="selection-option" value="Switzerland">Switzerland</option>
+              <option class="selection-option" value="Syria">Syria</option>
+              <option class="selection-option" value="Taiwan*">Taiwan*</option>
+              <option class="selection-option" value="Tajikistan">Tajikistan</option>
+              <option class="selection-option" value="Tanzania">Tanzania</option>
+              <option class="selection-option" value="Thailand">Thailand</option>
+              <option class="selection-option" value="Timor-leste">Timor-Leste</option>
+              <option class="selection-option" value="Togo">Togo</option>
+              <option class="selection-option" value="Trinidad and Tobago">Trinidad and Tobago</option>
+              <option class="selection-option" value="Tunisia">Tunisia</option>
+              <option class="selection-option" value="Turkey">Turkey</option>
+              <option class="selection-option" value="Turkmenistan">Turkmenistan</option>
+              <option class="selection-option" value="Uganda">Uganda</option>
+              <option class="selection-option" value="Ukraine">Ukraine</option>
+              <option class="selection-option" value="United Arab Emirates">United Arab Emirates</option>
+              <option class="selection-option" value="United Kingdom">United Kingdom</option>
+              <option class="selection-option" value="Uruguay">Uruguay</option>
+              <option class="selection-option" value="Uzbekistan">Uzbekistan</option>
+              <option class="selection-option" value="Venezuela">Venezuela</option>
+              <option class="selection-option" value="Vietnam">Vietnam</option>
+              <option class="selection-option" value="Western Sahara">Western Sahara</option>
+              <option class="selection-option" value="Yemen">Yemen</option>
+              <option class="selection-option" value="Zambia">Zambia</option>
+              <option class="selection-option" value="Zimbabwe">Zimbabwe</option>
+        </select>
+  </div>
+<!-- this is close of choice -->
+  
+
+  <!-- this is container which contains confirmed case death and recovered cases -->
+ <div class="row my-3">
+    <div class="col-4">
+      <div class="alert alert-primary shadow-lg p-3 mb-5 rounded " style="background-color: #F4D03F; border:solid white 2px;"><h3>CONFIRMED CASE</h3>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="alert alert-primary shadow-lg p-3 mb-5 rounded " style="background-color: #CD6155 ; border:solid white 2px"><h3>DEATH CASE</h3>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="alert alert-primary shadow-lg p-3 mb-5 rounded " style="background-color: #2ECC71; border:solid white 2px"><h3>RECOVERED CASE</h3></div>
+    </div>
+  </div>
+<!-- this is the close of conatiner of confimed death and recovered case -->
+
+<!-- this is an exmaple for view -->
+<h2 align="center">Confirmed case</h2>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+ 
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+<!-- this is the close of example of that container -->
+
+</div>
+
+<div class="container-fluid">
+  <!-- this containes the example of recoeved and death charts -->
+  <div class="row">
+    <div class="col-6" style="border: solid 1px;">
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="curve_chart" style="width: 800px; height: 500px"></div>
+    </div>
+
+    <div class="col-6" style="border: solid 1px;">
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart1'));
+
+        chart.draw(data, options);
+      }
+    </script>
+     <div id="curve_chart1" style="width: 800px; height: 500px;padding-right: 100px;"></div>
+    </div>
+  </div>
+  <!-- this conatins the clsoe of recovered  of recoevered and death case -->
+</div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

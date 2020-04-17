@@ -1,0 +1,704 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">   
+    <title>WebGL Earth API v2: Animation</title>
+   </head>
+
+<!-- this is intialize the body and globe when body loadede-->
+<body onload="initialize()" >
+  <!-- thhis is teh full container -->
+ <div class="container-fluid window-full" >
+
+  <!-- this is ued to make two column and kept in a row -->
+  <div class="row">
+        
+        <!-- this is the frst column -->
+        <!-- in this column we just assign the earth object  -->
+        <div class="col-6 " style="background-image: url('black.jpeg');background-size: cover;">
+        <div  id="earth_div" style="height: 900px;" >
+        </div>
+        </div>
+
+        <!-- this is the second column -->
+      <div class="col-6" >
+<!-- style="  background-image: url('4.jpg');background-size: cover;" -->
+        <!-- this is heading of page in block -->
+        <button type="button" class="btn btn-primary btn-lg btn-block" style="height: 100px;"><h3 class="display-5">CoronaVirus-Epidemic</h3> </button>
+
+        <!--this is the section in which the list of all countries are present -->
+        <div class="my-3" align="center" id="selection-div">
+          <select id="selection" name="selection">  
+              <option class="selection-option" disabled="">Worldwide</option>
+              <option class="selection-category" >Countries</option>   
+              <option class="selection-option" value="Afghanistan">Afghanistan</option>
+              <option class="selection-option" value="Albania">Albania</option>
+              <option class="selection-option" value="Algeria">Algeria</option>
+              <option class="selection-option" value="Andorra">Andorra</option>
+              <option class="selection-option" value="Angola">Angola</option>
+              <option class="selection-option" value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option class="selection-option" value="Argentina">Argentina</option>
+              <option class="selection-option" value="Armenia">Armenia</option>
+              <option class="selection-option" value="Aruba">Aruba</option>
+              <option class="selection-option" value="Australia">Australia</option>
+              <option class="selection-option" value="Austria">Austria</option>
+              <option class="selection-option" value="Azerbaijan">Azerbaijan</option>
+              <option class="selection-option" value="Bahamas">Bahamas</option>
+              <option class="selection-option" value="Bahrain">Bahrain</option>
+              <option class="selection-option" value="Bangladesh">Bangladesh</option>
+              <option class="selection-option" value="Barbados">Barbados</option>
+              <option class="selection-option" value="Belarus">Belarus</option>
+              <option class="selection-option" value="Belgium">Belgium</option>
+              <option class="selection-option" value="Belize">Belize</option>
+              <option class="selection-option" value="Benin">Benin</option>
+              <option class="selection-option" value="Bermuda">Bermuda</option>
+              <option class="selection-option" value="Bhutan">Bhutan</option>
+              <option class="selection-option" value="Bolivia">Bolivia</option>
+              <option class="selection-option" value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+              <option class="selection-option" value="Botswana">Botswana</option>
+              <option class="selection-option" value="Brazil">Brazil</option>
+              <option class="selection-option" value="Brunei">Brunei</option>
+              <option class="selection-option" value="Bulgaria">Bulgaria</option>
+              <option class="selection-option" value="Burkina Faso">Burkina Faso</option>
+              <option class="selection-option" value="Burundi">Burundi</option>
+              <option class="selection-option" value="Cabo Verde">Cabo Verde</option>
+              <option class="selection-option" value="Cambodia">Cambodia</option>
+              <option class="selection-option" value="Cameroon">Cameroon</option>
+              <option class="selection-option" value="Canada">Canada</option>
+              <option class="selection-option" value="Central African Republic">Central African Republic</option>
+              <option class="selection-option" value="Chad">Chad</option>
+              <option class="selection-option" value="Chile">Chile</option>
+              <option class="selection-option" value="China">China</option>
+              <option class="selection-option" value="Colombia">Colombia</option>
+              <option class="selection-option" value="Comoros">Comoros</option>
+              <option class="selection-option" value="Congo">Congo</option>
+              <option class="selection-option" value="Congo (Brazzaville)">Congo (Brazzaville)</option>
+              <option class="selection-option" value="Congo (Kinshasa)">Congo (Kinshasa)</option>
+              <option class="selection-option" value="Costa Rica">Costa Rica</option>
+              <option class="selection-option" value="Cote D'ivoire">Cote D'ivoire</option>
+              <option class="selection-option" value="Croatia">Croatia</option>
+              <option class="selection-option" value="Diamond Princess">(Cruise ship) Diamond Princess</option>
+              <option class="selection-option" value="MS Zaandam">(Cruise ship) MS Zaandam</option>
+              <option class="selection-option" value="Cuba">Cuba</option>
+              <option class="selection-option" value="Cyprus">Cyprus</option>
+              <option class="selection-option" value="Czech Republic">Czech Republic</option>
+              <option class="selection-option" value="Denmark">Denmark</option>
+              <option class="selection-option" value="Djibouti">Djibouti</option>
+              <option class="selection-option" value="Dominica">Dominica</option>
+              <option class="selection-option" value="Dominican Republic">Dominican Republic</option>
+              <option class="selection-option" value="Ecuador">Ecuador</option>
+              <option class="selection-option" value="Egypt">Egypt</option>
+              <option class="selection-option" value="El Salvador">El Salvador</option>
+              <option class="selection-option" value="Equatorial Guinea">Equatorial Guinea</option>
+              <option class="selection-option" value="Eritrea">Eritrea</option>
+              <option class="selection-option" value="Estonia">Estonia</option>
+              <option class="selection-option" value="Eswatini">Eswatini (Swaziland)</option>
+              <option class="selection-option" value="Ethiopia">Ethiopia</option>
+              <option class="selection-option" value="Fiji">Fiji</option>
+              <option class="selection-option" value="Finland">Finland</option>
+              <option class="selection-option" value="France">France</option>
+              <option class="selection-option" value="Gabon">Gabon</option>
+              <option class="selection-option" value="Gambia">Gambia</option>
+              <option class="selection-option" value="Georgia">Georgia</option>
+              <option class="selection-option" value="Germany">Germany</option>
+              <option class="selection-option" value="Ghana">Ghana</option>
+              <option class="selection-option" value="Greece">Greece</option>
+              <option class="selection-option" value="Greenland">Greenland</option>
+              <option class="selection-option" value="Grenada">Grenada</option>
+              <option class="selection-option" value="Guatemala">Guatemala</option>
+              <option class="selection-option" value="Guinea">Guinea</option>
+              <option class="selection-option" value="Guinea-bissau">Guinea-bissau</option>
+              <option class="selection-option" value="Guyana">Guyana</option>
+              <option class="selection-option" value="Haiti">Haiti</option>
+              <option class="selection-option" value="Holy See">Holy See (Vatican City State)</option>
+              <option class="selection-option" value="Honduras">Honduras</option>
+              <option class="selection-option" value="Hungary">Hungary</option>
+              <option class="selection-option" value="Iceland">Iceland</option>
+              <option class="selection-option" value="India">India</option>
+              <option class="selection-option" value="Indonesia">Indonesia</option>
+              <option class="selection-option" value="Iran">Iran</option>
+              <option class="selection-option" value="Iraq">Iraq</option>
+              <option class="selection-option" value="Ireland">Ireland</option>
+              <option class="selection-option" value="Israel">Israel</option>
+              <option class="selection-option" value="Italy">Italy</option>
+              <option class="selection-option" value="Jamaica">Jamaica</option>
+              <option class="selection-option" value="Japan">Japan</option>
+              <option class="selection-option" value="Jordan">Jordan</option>
+              <option class="selection-option" value="Kazakhstan">Kazakhstan</option>
+              <option class="selection-option" value="Kenya">Kenya</option>
+              <option class="selection-option" value="Korea, North">Korea (North)</option>
+              <option class="selection-option" value="Korea, South">Korea (South)</option>
+              <option class="selection-option" value="Kosova">Kosovo</option>
+              <option class="selection-option" value="Kuwait">Kuwait</option>
+              <option class="selection-option" value="Kyrgyzstan">Kyrgyzstan</option>
+              <option class="selection-option" value="Laos">Laos</option>
+              <option class="selection-option" value="Latvia">Latvia</option>
+              <option class="selection-option" value="Lebanon">Lebanon</option>
+              <option class="selection-option" value="Lesotho">Lesotho</option>
+              <option class="selection-option" value="Liberia">Liberia</option>
+              <option class="selection-option" value="Libya">Libya</option>
+              <option class="selection-option" value="Liechtenstein">Liechtenstein</option>
+              <option class="selection-option" value="Lithuania">Lithuania</option>
+              <option class="selection-option" value="Luxembourg">Luxembourg</option>
+              <option class="selection-option" value="North Macedonia">Macedonia (North)</option>
+              <option class="selection-option" value="Madagascar">Madagascar</option>
+              <option class="selection-option" value="Malaysia">Malaysia</option>
+              <option class="selection-option" value="Maldives">Maldives</option>
+              <option class="selection-option" value="Mali">Mali</option>
+              <option class="selection-option" value="Malta">Malta</option>
+              <option class="selection-option" value="Mauritania">Mauritania</option>
+              <option class="selection-option" value="Mauritius">Mauritius</option>
+              <option class="selection-option" value="Mexico">Mexico</option>
+              <option class="selection-option" value="Moldova">Moldova</option>
+              <option class="selection-option" value="Monaco">Monaco</option>
+              <option class="selection-option" value="Mongolia">Mongolia</option>
+              <option class="selection-option" value="Montenegro">Montenegro</option>
+              <option class="selection-option" value="Morocco">Morocco</option>
+              <option class="selection-option" value="Mozambique">Mozambique</option>
+              <option class="selection-option" value="Burma">Myanmar (Burma)</option>
+              <option class="selection-option" value="Namibia">Namibia</option>
+              <option class="selection-option" value="Nepal">Nepal</option>
+              <option class="selection-option" value="Netherlands">Netherlands</option>
+              <option class="selection-option" value="New Zealand">New Zealand</option>
+              <option class="selection-option" value="Nicaragua">Nicaragua</option>
+              <option class="selection-option" value="Niger">Niger</option>
+              <option class="selection-option" value="Nigeria">Nigeria</option>
+              <option class="selection-option" value="Norway">Norway</option>
+              <option class="selection-option" value="Oman">Oman</option>
+              <option class="selection-option" value="Pakistan">Pakistan</option>
+              <option class="selection-option" value="West Bank and Gaza">Palestinian Territory, Occupied (West Bank &amp; Gaza)</option>
+              <option class="selection-option" value="Panama">Panama</option>
+              <option class="selection-option" value="Papua New Guinea">Papua New Guinea</option>
+              <option class="selection-option" value="Paraguay">Paraguay</option>
+              <option class="selection-option" value="Peru">Peru</option>
+              <option class="selection-option" value="Philippines">Philippines</option>
+              <option class="selection-option" value="Poland">Poland</option>
+              <option class="selection-option" value="Portugal">Portugal</option>
+              <option class="selection-option" value="Qatar">Qatar</option>
+              <option class="selection-option" value="Romania">Romania</option>
+              <option class="selection-option" value="Russia">Russia</option>
+              <option class="selection-option" value="Rwanda">Rwanda</option>
+              <option class="selection-option" value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+              <option class="selection-option" value="Saint Lucia">Saint Lucia</option>
+              <option class="selection-option" value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+              <option class="selection-option" value="San Marino">San Marino</option>
+              <option class="selection-option" value="Saudi Arabia">Saudi Arabia</option>
+              <option class="selection-option" value="Senegal">Senegal</option>
+              <option class="selection-option" value="Serbia">Serbia</option>
+              <option class="selection-option" value="Seychelles">Seychelles</option>
+              <option class="selection-option" value="Sierra Leone">Sierra Leone</option>
+              <option class="selection-option" value="Singapore">Singapore</option>
+              <option class="selection-option" value="Slovakia">Slovakia</option>
+              <option class="selection-option" value="Slovenia">Slovenia</option>
+              <option class="selection-option" value="Solomon Islands">Solomon Islands</option>
+              <option class="selection-option" value="Somalia">Somalia</option>
+              <option class="selection-option" value="South Africa">South Africa</option>
+              <option class="selection-option" value="Spain">Spain</option>
+              <option class="selection-option" value="Sri Lanka">Sri Lanka</option>
+              <option class="selection-option" value="Sudan">Sudan</option>
+              <option class="selection-option" value="Suriname">Suriname</option>
+              <option class="selection-option" value="Sweden">Sweden</option>
+              <option class="selection-option" value="Switzerland">Switzerland</option>
+              <option class="selection-option" value="Syria">Syria</option>
+              <option class="selection-option" value="Taiwan*">Taiwan*</option>
+              <option class="selection-option" value="Tajikistan">Tajikistan</option>
+              <option class="selection-option" value="Tanzania">Tanzania</option>
+              <option class="selection-option" value="Thailand">Thailand</option>
+              <option class="selection-option" value="Timor-leste">Timor-Leste</option>
+              <option class="selection-option" value="Togo">Togo</option>
+              <option class="selection-option" value="Trinidad and Tobago">Trinidad and Tobago</option>
+              <option class="selection-option" value="Tunisia">Tunisia</option>
+              <option class="selection-option" value="Turkey">Turkey</option>
+              <option class="selection-option" value="Turkmenistan">Turkmenistan</option>
+              <option class="selection-option" value="Uganda">Uganda</option>
+              <option class="selection-option" value="Ukraine">Ukraine</option>
+              <option class="selection-option" value="United Arab Emirates">United Arab Emirates</option>
+              <option class="selection-option" value="United Kingdom">United Kingdom</option>
+              <option class="selection-option" value="US">United States</option>
+        
+              <option class="selection-option" value="Uruguay">Uruguay</option>
+              <option class="selection-option" value="Uzbekistan">Uzbekistan</option>
+              <option class="selection-option" value="Venezuela">Venezuela</option>
+              <option class="selection-option" value="Vietnam">Vietnam</option>
+              <option class="selection-option" value="Western Sahara">Western Sahara</option>
+              <option class="selection-option" value="Yemen">Yemen</option>
+              <option class="selection-option" value="Zambia">Zambia</option>
+              <option class="selection-option" value="Zimbabwe">Zimbabwe</option>
+          </select>
+
+          </div>
+        
+        
+        <!-- this is area of option like animate stop global -->
+        <div style="padding-left: 190px;">
+        <button id="animateit" class="btn btn-success">ANIMATE</button>
+        <button id="globalAnalysis" class="btn btn-danger">GLOBE ANALYSIS</button>
+        <button id="stopanimateit" class="btn btn-info">STOP</button>
+        </div>
+        <!-- closing of this area  -->
+
+        <!-- this is area for showing death ,recoverd ,confirmed -->
+        <!-- shadow p-3 mb-5  to give shadow-->
+        <div class="row my-4">
+          <div class="col-4">
+          <div id="confirmed" class="alert alert-primary shadow  rounded " style="background-color: #F4D03F; border:solid white 2px;">
+          </div>
+          </div>
+          <div class="col-4">
+          <div id="death" class="alert alert-primary shadow rounded " style="background-color: #CD6155 ; border:solid white 2px">
+          </div>
+          </div>
+          <div class="col-4">
+          <div id="recoverd" class="alert alert-primary shadow rounded " style="background-color: #2ECC71; border:solid white 2px"></div>
+          </div>
+          <div id="countryName"  type="button" class="btn btn-outline-warning my-2" style="position: relative;left:320px;font-size: 20px;">World</div>
+        </div>
+        <!-- this is the closing of the area -->
+
+
+<!-- this isthe design of the collapse which is prent when dom is laoded -->
+ <style>
+      .accordions {
+      font-family: arial;
+      width: 100%;
+      margin: 25px auto;
+      }
+
+      .accordion-item {
+          background-color: #f9f9f9;
+          margin-bottom: 20px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+      }
+
+      .accordion-item .accordion-title {
+          cursor: pointer;
+          padding: 20px;
+          transition: all 0.4s;
+          border-radius: 5px 5px 0 0;
+      }
+
+      .accordion-item .accordion-title.active-title {
+          background-color: #04b8d8;
+          color: #fff;
+      }
+
+      .accordion-item .accordion-title h2 {
+          margin: 0;
+          font-size: 18px;
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .accordion-item .accordion-title i.fa-chevron-down {
+          transform: rotate(0);
+          transition: 0.4s;
+      }
+
+      .accordion-item .accordion-title i.fa-chevron-down.chevron-top {
+          transform: rotate(-180deg);
+      }
+
+      .accordion-item .accordion-content {
+          display: none;
+          line-height: 1.7;
+          padding: 20px;
+          background-color: #f9f9f9;
+          border-radius: 0 0 5px 5px;
+      }
+
+      .accordion-item .accordion-content.active {
+          display: block;
+      }
+
+      .accordion-item .accordion-content p {
+          margin: 0;
+      }
+ </style>
+
+<!-- this is the div where intially detail is prent and when we selecta country we hget the chart of that area-->
+
+      <div id="chart_div" align="center">
+        <div class="accordions">
+          <div class="accordion-item">
+          <div class="accordion-title" data-tab="item1">
+            <h2>What is CoronaVirus <i class="fas fa-chevron-down"></i></h2>
+          </div>
+          <div class="accordion-content" id="item1">
+            <p>
+              Coronavirus disease (COVID-19) is an infectious disease caused by a new virus.
+              The disease causes respiratory illness (like the flu) with symptoms such as a cough, fever, and in more severe cases, difficulty breathing. You can protect yourself by washing your hands frequently, avoiding touching your face, and avoiding close contact (1 meter or 3 feet) with people who are unwell.
+            </p>
+          </div>
+          </div>
+
+          <div class="accordion-item">
+          <div class="accordion-title" data-tab="item2">
+            <h2>What is symptoms of Coronavirus? <i class="fas fa-chevron-down"></i></h2>
+          </div>
+          <div class="accordion-content" id="item2">
+            <p>
+              People may be sick with the virus for 1 to 14 days before developing symptoms. The most common symptoms of coronavirus disease (COVID-19) are fever, tiredness, and dry cough. Most people (about 80%) recover from the disease without needing special treatment.<hr>
+              More rarely, the disease can be serious and even fatal. Older people, and people with other medical conditions (such as asthma, diabetes, or heart disease), may be more vulnerable to becoming severely ill.
+            </p>
+          </div>
+          </div>
+
+          <div class="accordion-item">
+          <div class="accordion-title" data-tab="item3">
+            <h2>Prevention <i class="fas fa-chevron-down"></i></h2>
+          </div>
+          <div class="accordion-content" id="item3">
+            <p>
+              1=STAYhome
+              2=KEEPa safe distance
+              3=WASHhands often
+              4=COVERyour cough
+              5=SICK?Call the helpline
+            </p>
+          </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title" data-tab="item4">
+            <h2>Treatments <i class="fas fa-chevron-down"></i></h2>
+            </div>
+            <div class="accordion-content" id="item4">
+            <p>
+              If you have mild symptoms, stay at home until you’ve recovered. You can relieve your symptoms if you:
+              rest and sleep
+              keep warm
+              drink plenty of liquids
+              use a room humidifier or take a hot shower to help ease a sore throat and cough
+            </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+              <div class="accordion-title" data-tab="item5">
+              <h2>How it spread? <i class="fas fa-chevron-down"></i></h2>
+              </div>
+              <div class="accordion-content" id="item5">
+              <p>
+                Coronavirus disease spreads primarily through contact with an infected person when they cough or sneeze. It also spreads when a person touches a surface or object that has the virus on it, then touches their eyes, nose, or mouth.
+              </p>
+              </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+<!-- this is the closing of the second column  -->
+
+  </div>
+<!-- this is the clsoing of the row -->
+
+</div>
+<!-- this is the clsoing of the container -->
+
+</body>
+</html>
+
+<!-- first cdn is used to load char of google -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- this scipt is used to get j query -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- this is cdn link of bootstrap -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- this is used to laod globe of earth -->
+<script src="http://www.webglearth.com/v2/api.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('#content').height($(window).height());
+});
+
+// earth is global varible for earth
+var earth;
+
+// this is used to get daetil of current country 
+var thecountryname;
+
+// this is used to laod chart and until it loaded it get spinner
+var chartdiv=document.getElementById('chart_div'); 
+
+
+function initialize() {
+// this is used to intailize the map
+
+// here we intialize varity of function to globe
+var options = {
+  sky: true,
+  atmosphere: true,
+  dragging: true,
+  // tilting: true,
+  // zooming: false,
+  center: [46.8011, 8.2266],
+  zoom: 2.5
+};
+
+// this is used to create new object of earth 
+earth = new WE.map('earth_div', options);
+earth.setView([20.5937,78.9629], 3.17);
+var toner = WE.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+  attribution: 'Contribution by RITIK SRIVASTAVA ',
+  // opacity: 1.2
+});
+toner.addTo(earth);
+
+
+
+
+// this is used rotate the earth and provide the animation
+let ani=document.getElementById("animateit");
+let stop=document.getElementById("stopanimateit")
+ani.addEventListener('click',function(){
+    let pause=true;
+    // stop.style.display = "block";
+    stop.addEventListener('click',function()
+    {
+    pause=false;
+    }) 
+    var before = null;
+    requestAnimationFrame(function animate(now) {
+        var c = earth.getPosition();
+        // console.log(c);
+        var elapsed = before? now - before: 0;
+        before = now;
+        if (!pause) return ;
+        earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+        requestAnimationFrame(animate);
+    });
+});
+
+
+
+// this world deatil function give count of all cases in the world
+let worldDeatil=function()
+{
+  const urlcountrycase=`https://api.covid19api.com/world/total`;
+fetch(urlcountrycase)
+.then(data=>{
+  return data.json()
+}).then(res=>{
+  // console.log(res.TotalConfirmed);
+  // console.log(res.TotalDeaths);
+  // console.log(res.TotalRecovered);
+  let confirmed=document.getElementById('confirmed');
+  let recoverd=document.getElementById('recoverd');
+  let death=document.getElementById('death');
+  countryName.innerHTML=`WORLD`;
+  confirmed.innerHTML=`<h5 style="height:30px;">CONFIRM CASE ${res.TotalConfirmed}</h5>`;
+  recoverd.innerHTML=`<h5 style="height:30px;">DEATH CASE ${res.TotalRecovered}</h5>`;
+  death.innerHTML=`<h5 style="height:30px;">RECOVERED CASE ${res.TotalDeaths}</h5>`;
+});
+}
+// we call the function when the DOM get laoded
+worldDeatil();
+
+
+// this function we fill the deatil of the confirmcase,recoveredcase,deathcase in div elemt 
+let tofilldetail=function(confirmcase,recoveredcase,deathcase){
+  let confirmed=document.getElementById('confirmed');
+  let recoverd=document.getElementById('recoverd');
+  let death=document.getElementById('death');
+  countryName.innerHTML=`${thecountryname}`
+  confirmed.innerHTML=`<h5 style="height:30px;">CONFIRM CASE ${confirmcase}</h5>`;
+  death.innerHTML=`<h5 style="height:30px;">DEATH CASE ${deathcase}</h5>`;
+  recoverd.innerHTML=`<h5 style="height:30px;">RECOVERED CASE ${recoveredcase}</h5>`;
+}
+
+
+// this is important beacuse we call the api only one time since we used 10 mb of data and take time to fetch we make the call and get respose in advance and used with any other country name for parsing
+var newres;
+const urlglobal="https://pomber.github.io/covid19/timeseries.json";
+fetch(urlglobal).then(data=>{ return data.json() }).then(res=>{  
+  // here we assogn its value to gloabal variable
+  newres=res; 
+});
+
+
+// this is function which call tofilldeatil function and also fill charts and essentaial thing so it sname is the master function
+let masterone=function(){
+    // console.log(newres);
+    // console.log(newres.India);
+    // console.log(thecountryname);
+
+
+    // here we parse the country by the country name since we get the country function from upward function so we make a global variable thecountryname 
+
+    // if the thecountryname is a variable we parsed like this if we do in json
+    // the it parse like  newres.India 
+    let day1=newres[thecountryname];
+    // we make it multi dimensinal since addrow column accept like this in google charst
+    var result = [[]];
+
+    console.log(day1);
+      if(day1===undefined)
+    {
+      chartdiv.innerHTML='<div style="font-size:35px;">No result for this country </div>';
+
+      console.log('no country found');
+      thecountryname=" NO Result ";
+      tofilldetail(0,0,0);
+      return ;
+    }
+
+    // here we load the charts and  google chart package
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    var i=0;
+    // here we push the all single dimensial array in result[0] it would see like [1,2,3,4,],[1,2,3,4,],[1,2,3,4,] in one array [[1,2,3,4,],[1,2,3,4,],[1,2,3,4,]]
+    for(i in day1){
+      // console.log(day1[i])
+      // console.log(day1[i].date);
+      // console.log(day1[i].confirmed);
+      // console.log(day1[i].deaths);
+      // console.log(day1[i].recovered);
+      result[0].push([(day1[i].date),day1[i].confirmed,day1[i].deaths,day1[i].recovered]);
+    }
+    // console.log(day1[i].confirmed+" "+day1[i].deaths+" "+day1[i].recovered);
+
+    // this will send last deatil to function since i is pointing on last index 
+    tofilldetail(day1[i].confirmed,day1[i].recovered,day1[i].deaths);
+
+    // this function will mark point and popup on that country 
+    // let markonmap=function()
+    // {
+    //   marker.bindPopup(`<span >RECOVERED ${day1[i].recovered}  </span><span >Deaths ${day1[i].deaths}</span><span >Confirmed ${day1[i].confirmed}</span>`);
+    // }
+
+
+
+
+
+    function drawChart() {
+    // this will add the  new data visualistaion object
+    var data = new google.visualization.DataTable();
+
+    // this is going to add the column in the graph
+    data.addColumn('string', 'Time&Date');
+    data.addColumn('number', 'Active');
+    data.addColumn('number', 'Recovered');
+    data.addColumn('number', 'Death');
+
+    // this add all the data value in the graph
+    data.addRows(result[0]);
+
+    var options = {
+        hAxis: {title: 'Date',  titleTextStyle: {color: '#333'}},
+        vAxis: {title: 'Population',minValue: 0},
+        width:700,
+        height:370 };
+   
+    // console.log(chartdiv);
+    var chart = new google.visualization.LineChart(chartdiv);
+      chart.draw(data, options);
+    }
+};
+
+
+
+
+// this on dblclick on globe return the country name by an API
+var showInfo = function(e) {
+  // this again show spinner in chart div
+  chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>';
+
+
+  // convert that lon and lat in city
+  const urlCountry=`https://api.opencagedata.com/geocode/v1/json?q=${e.latitude}+${e.longitude}&key=0b3fcd7f85be42b1b69d06ea061b6b7f`;
+  fetch(urlCountry)
+  .then(data=>{
+  return data.json()
+  }).then(res=>{ 
+  // with this we able to get the country name 
+  thecountryname=res.results[0].components.country;
+  // we again call masterone function for doing all imaporta nt work
+  masterone(); 
+  })
+};
+earth.on('dblclick', showInfo);
+// on double click this work and always function without parenthis otherwise it will call directly when the dom loaded 
+
+
+// this is used fly to that countr which you selected
+function flyTo(lat,lng){
+// earth.flyTo(lat,lng);
+// console.log(lat,lng);
+// console.log("in fly to funtion"+deatilproblem);
+earth.panTo([lat,lng]); 
+var marker = WE.marker([lat,lng]).addTo(earth)
+// markonmap();
+}
+
+
+// here we select the option  from differnr country 
+let choice=document.getElementById('selection');
+choice.addEventListener('change',(event)=>{
+// console.log(event.target.value);
+
+// this will give the country name 
+thecountryname=event.target.value;
+console.log(thecountryname);
+let countryName=document.getElementById('countryName');
+countryName.innerHTML=`${event.target.value}`;
+
+// this is the api with which we helps to get the longitude and latitude of that country
+const urlCountryname=`https://api.opencagedata.com/geocode/v1/json?q=${event.target.value}&key=0b3fcd7f85be42b1b69d06ea061b6b7f`;
+fetch(urlCountryname)
+.then(data=>{
+  // this convert into json facts 
+  return data.json()
+}).then(res=>{
+// this result can be parsed by see in json view in browser
+// console.log(res);
+let latitude=res.results[0].annotations.DMS.lat.toString();
+let longitude=res.results[0].annotations.DMS.lng.toString();
+// thre present a sign in lat and lng we get it seprated by this 
+let intlatitude=latitude.split('°');
+let intlongitude=longitude.split('°');
+// console.log(intlatitude);
+// console.log(intlongitude);
+
+// we load the  spinner until it fetch the charts
+chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>';
+
+// this is the master function which draw the charts and show all type of cases
+masterone();
+
+// this help globe to animate to move that location which we selected 
+
+flyTo(intlatitude[0],intlongitude[0])
+});
+});
+
+
+
+
+}
+// this is closing of earth intialize object
+
+// this copied function from code pen for collapse detail 
+$(document).ready(function(){
+  $(".accordion-title").click(function(e){
+  var accordionitem = $(this).attr("data-tab");
+  $("#"+accordionitem).slideToggle().parent().siblings().find(".accordion-content").slideUp();
+
+  $(this).toggleClass("active-title");
+  $("#"+accordionitem).parent().siblings().find(".accordion-title").removeClass("active-title");
+
+  $("i.fa-chevron-down",this).toggleClass("chevron-top");
+  $("#"+accordionitem).parent().siblings().find(".accordion-title i.fa-chevron-down").removeClass("chevron-top");
+  });   
+});
+
+
+</script>
+
+
