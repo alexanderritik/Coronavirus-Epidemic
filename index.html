@@ -426,55 +426,6 @@ var thecountryname;
 var chartdiv=document.getElementById('chart_div'); 
 
 
-function initialize() {
-// this is used to intailize the map
-
-// here we intialize varity of function to globe
-var options = {
-  sky: true,
-  atmosphere: true,
-  dragging: true,
-  // tilting: true,
-  // zooming: false,
-  center: [46.8011, 8.2266],
-  zoom: 2.5
-};
-
-// this is used to create new object of earth 
-earth = new WE.map('earth_div', options);
-earth.setView([20.5937,78.9629], 3.17);
-var toner = WE.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
-  attribution: 'Contribution by RITIK SRIVASTAVA ',
-  // opacity: 1.2
-});
-toner.addTo(earth);
-
-
-
-
-// this is used rotate the earth and provide the animation
-let ani=document.getElementById("animateit");
-let stop=document.getElementById("stopanimateit")
-ani.addEventListener('click',function(){
-    let pause=true;
-    // stop.style.display = "block";
-    stop.addEventListener('click',function()
-    {
-    pause=false;
-    }) 
-    var before = null;
-    requestAnimationFrame(function animate(now) {
-        var c = earth.getPosition();
-        // console.log(c);
-        var elapsed = before? now - before: 0;
-        before = now;
-        if (!pause) return ;
-        earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
-        requestAnimationFrame(animate);
-    });
-});
-
-
 
 // this world deatil function give count of all cases in the world
 let worldDeatil=function()
@@ -605,6 +556,55 @@ let masterone=function(){
 
 
 
+function initialize() {
+// this is used to intailize the map
+
+// here we intialize varity of function to globe
+var options = {
+  sky: true,
+  atmosphere: true,
+  dragging: true,
+  // tilting: true,
+  // zooming: false,
+  center: [46.8011, 8.2266],
+  zoom: 2.5
+};
+
+// this is used to create new object of earth 
+earth = new WE.map('earth_div', options);
+earth.setView([20.5937,78.9629], 3.17);
+var toner = WE.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+  attribution: 'Contribution by RITIK SRIVASTAVA ',
+  // opacity: 1.2
+});
+toner.addTo(earth);
+
+
+
+
+// this is used rotate the earth and provide the animation
+let ani=document.getElementById("animateit");
+let stop=document.getElementById("stopanimateit")
+ani.addEventListener('click',function(){
+    let pause=true;
+    // stop.style.display = "block";
+    stop.addEventListener('click',function()
+    {
+    pause=false;
+    }) 
+    var before = null;
+    requestAnimationFrame(function animate(now) {
+        var c = earth.getPosition();
+        // console.log(c);
+        var elapsed = before? now - before: 0;
+        before = now;
+        if (!pause) return ;
+        earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+        requestAnimationFrame(animate);
+    });
+});
+
+
 // this on dblclick on globe return the country name by an API
 var showInfo = function(e) {
   // this again show spinner in chart div
@@ -638,7 +638,14 @@ var marker = WE.marker([lat,lng]).addTo(earth)
 }
 
 
-// here we select the option  from differnr country 
+
+
+}
+// this is closing of earth intialize object
+  
+
+  
+  // here we select the option  from differnr country 
 let choice=document.getElementById('selection');
 choice.addEventListener('change',(event)=>{
 // console.log(event.target.value);
@@ -680,9 +687,8 @@ flyTo(intlatitude[0],intlongitude[0])
 
 
 
-
-}
-// this is closing of earth intialize object
+  
+  
 
 // this copied function from code pen for collapse detail 
 $(document).ready(function(){
