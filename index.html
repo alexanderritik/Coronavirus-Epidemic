@@ -685,8 +685,8 @@ chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style
 masterone();  
 // this help globe to animate to move that location which we selected 
  
-earth.panTo([intlatitude[0],intlongitude[0]]); 
-var marker = WE.marker([lat,lng]).addTo(earth)
+earth.panTo([intlatitude[0],intlongitude[0] ]); 
+var marker = WE.marker([intlatitude[0],intlongitude[0] ]).addTo(earth)
 });
 
 });
