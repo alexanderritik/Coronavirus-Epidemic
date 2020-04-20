@@ -649,7 +649,8 @@ var marker = WE.marker([lat,lng]).addTo(earth)
 let choice=document.getElementById('selection');
 choice.addEventListener('change',(event)=>{
 // console.log(event.target.value);
-
+let intlatitude;
+let intlongitude;
 // this will give the country name 
 thecountryname=event.target.value;
 console.log(thecountryname);
@@ -668,15 +669,15 @@ fetch(urlCountryname)
 let latitude=res.results[0].annotations.DMS.lat.toString();
 let longitude=res.results[0].annotations.DMS.lng.toString();
 // thre present a sign in lat and lng we get it seprated by this 
-let intlatitude=latitude.split('°');
-let intlongitude=longitude.split('°');
+ intlatitude=latitude.split('°');
+ intlongitude=longitude.split('°');
 // console.log(intlatitude);
 // console.log(intlongitude);
 
 // we load the  spinner until it fetch the charts
 chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>';
 
-  flyTo(intlatitude[0],intlongitude[0])
+
 // this is the master function which draw the charts and show all type of cases
 masterone();
 
@@ -684,6 +685,8 @@ masterone();
 
 
 });
+  
+    flyTo(intlatitude[0],intlongitude[0])
 });
 
 
