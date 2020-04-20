@@ -627,15 +627,15 @@ earth.on('dblclick', showInfo);
 // on double click this work and always function without parenthis otherwise it will call directly when the dom loaded 
 
 
-// this is used fly to that countr which you selected
-var gotto=function(lat,lng){
-// earth.flyTo(lat,lng);
-// console.log(lat,lng);
-// console.log("in fly to funtion"+deatilproblem);
-earth.panTo([lat,lng]); 
-var marker = WE.marker([lat,lng]).addTo(earth)
-// markonmap();
-}
+// // this is used fly to that countr which you selected
+// var gotto=function(lat,lng){
+// // earth.flyTo(lat,lng);
+// // console.log(lat,lng);
+// // console.log("in fly to funtion"+deatilproblem);
+// earth.panTo([lat,lng]); 
+// var marker = WE.marker([lat,lng]).addTo(earth)
+// // markonmap();
+// }
 
 
 
@@ -685,12 +685,9 @@ chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style
 masterone();  
 // this help globe to animate to move that location which we selected 
  
-  console.log(intlatitude[0]);
-console.log(intlongitude[0]);
-
+earth.panTo([intlatitude[0],intlongitude[0]]); 
+var marker = WE.marker([lat,lng]).addTo(earth)
 });
-
- gotto(29,94);
 
 });
 
