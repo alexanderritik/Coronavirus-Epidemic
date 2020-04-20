@@ -230,16 +230,17 @@
         
         
         <!-- this is area of option like animate stop global -->
-        <div style="padding-left: 190px;">
+        <div align="center">
         <button id="animateit" class="btn btn-success">ANIMATE</button>
         <button id="globalAnalysis" class="btn btn-danger">GLOBE ANALYSIS</button>
         <button id="stopanimateit" class="btn btn-info">STOP</button>
+        
         </div>
         <!-- closing of this area  -->
 
         <!-- this is area for showing death ,recoverd ,confirmed -->
         <!-- shadow p-3 mb-5  to give shadow-->
-        <div class="row my-4">
+        <div class="row my-4" style="font-size:14px">
           <div class="col-4">
           <div id="confirmed" class="alert alert-primary shadow  rounded " style="background-color: #F4D03F; border:solid white 2px;">
           </div>
@@ -388,13 +389,13 @@
         </div>
       </div>
 
-
+  <button ><a href="https://github.com/pomber/covid19" target="_blank">Data source</a></button>
     </div>
 <!-- this is the closing of the second column  -->
 
   </div>
 <!-- this is the clsoing of the row -->
-  <button><a href="https://github.com/pomber/covid19" target="_blank">Data source</a></button>
+  
 </div>
 <!-- this is the clsoing of the container -->
 
@@ -457,9 +458,9 @@ let tofilldetail=function(confirmcase,recoveredcase,deathcase){
   let recoverd=document.getElementById('recoverd');
   let death=document.getElementById('death');
   countryName.innerHTML=`${thecountryname}`
-  confirmed.innerHTML=`<h5 style="height:30px;">CONFIRM CASE ${confirmcase}</h5>`;
-  death.innerHTML=`<h5 style="height:30px;">DEATH CASE ${deathcase}</h5>`;
-  recoverd.innerHTML=`<h5 style="height:30px;">RECOVERED CASE ${recoveredcase}</h5>`;
+  confirmed.innerHTML=`<div style="height:30px;">CONFIRM CASE ${confirmcase}</div>`;
+  death.innerHTML=`<div style="height:30px;">DEATH CASE ${deathcase}</div>`;
+  recoverd.innerHTML=`<div style="height:30px;">RECOVERED CASE ${recoveredcase}</div>`;
 }
 
 
