@@ -240,7 +240,7 @@
 
         <!-- this is area for showing death ,recoverd ,confirmed -->
         <!-- shadow p-3 mb-5  to give shadow-->
-        <div class="row my-4" style="font-size:14px">
+        <div class="row my-4" style="font-size:17px;font-family:'Comic Sans MS';">
           <div class="col-4">
           <div id="confirmed" class="alert alert-primary shadow  rounded " style="background-color: #F4D03F; border:solid white 2px;">
           </div>
@@ -389,7 +389,7 @@
         </div>
       </div>
 
-  <button ><a href="https://github.com/pomber/covid19" target="_blank">Data source</a></button>
+  <button class="btn btn-success" ><a href="https://github.com/pomber/covid19" target="_blank">Data source</a></button>
     </div>
 <!-- this is the closing of the second column  -->
 
@@ -458,9 +458,9 @@ let tofilldetail=function(confirmcase,recoveredcase,deathcase){
   let recoverd=document.getElementById('recoverd');
   let death=document.getElementById('death');
   countryName.innerHTML=`${thecountryname}`
-  confirmed.innerHTML=`<div style="height:30px;">CONFIRM CASE ${confirmcase}</div>`;
-  death.innerHTML=`<div style="height:30px;">DEATH CASE ${deathcase}</div>`;
-  recoverd.innerHTML=`<div style="height:30px;">RECOVERED CASE ${recoveredcase}</div>`;
+  confirmed.innerHTML=`CONFIRM CASE ${confirmcase}`;
+  death.innerHTML=`DEATH CASE ${deathcase}`;
+  recoverd.innerHTML=`RECOVERED CASE ${recoveredcase}`;
 }
 
 
