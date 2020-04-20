@@ -629,7 +629,7 @@ earth.on('dblclick', showInfo);
 
 
 // this is used fly to that countr which you selected
-function flyTo(lat,lng){
+const flyTo=function (lat,lng){
 // earth.flyTo(lat,lng);
 // console.log(lat,lng);
 // console.log("in fly to funtion"+deatilproblem);
@@ -682,7 +682,7 @@ masterone();
 
 // this help globe to animate to move that location which we selected 
 
-flyTo(intlatitude[0],intlongitude[0])
+flyTo(intlatitude[0],intlongitude[0]);
 });
 });
 
