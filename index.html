@@ -234,7 +234,6 @@
         <button id="animateit" class="btn btn-success">ANIMATE</button>
         <button id="globalAnalysis" class="btn btn-danger">GLOBE ANALYSIS</button>
         <button id="stopanimateit" class="btn btn-info">STOP</button>
-        <button class="btn btn-success"><a href="https://github.com/pomber/covid19" target="_blank">Git source</a></button>
         </div>
         <!-- closing of this area  -->
 
@@ -395,7 +394,7 @@
 
   </div>
 <!-- this is the clsoing of the row -->
-
+  <button><a href="https://github.com/pomber/covid19" target="_blank">Data source</a></button>
 </div>
 <!-- this is the clsoing of the container -->
 
@@ -627,6 +626,7 @@ var showInfo = function(e) {
 earth.on('dblclick', showInfo);
 // on double click this work and always function without parenthis otherwise it will call directly when the dom loaded 
 
+
 // this is used fly to that countr which you selected
 function flyTo(lat,lng){
 // earth.flyTo(lat,lng);
@@ -638,7 +638,14 @@ var marker = WE.marker([lat,lng]).addTo(earth)
 }
 
 
-// here we select the option  from differnr country 
+
+
+}
+// this is closing of earth intialize object
+  
+
+  
+  // here we select the option  from differnr country 
 let choice=document.getElementById('selection');
 choice.addEventListener('change',(event)=>{
 // console.log(event.target.value);
@@ -669,20 +676,14 @@ let intlongitude=longitude.split('°');
 // we load the  spinner until it fetch the charts
 chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>';
 
-  
 // this is the master function which draw the charts and show all type of cases
+masterone();
 
-  // this help globe to animate to move that location which we selected 
-  masterone();
-  
+// this help globe to animate to move that location which we selected 
 
-// flyTo(intlatitude[0],intlongitude[0])
-
-
-
+flyTo(intlatitude[0],intlongitude[0])
 });
 });
-
 
 
 
@@ -705,5 +706,3 @@ $(document).ready(function(){
 
 
 </script>
-
-
