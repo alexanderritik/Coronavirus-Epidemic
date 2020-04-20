@@ -655,8 +655,7 @@ let intlongitude;
 
 thecountryname=event.target.value;
   
-  // this is the master function which draw the charts and show all type of cases
-masterone();  
+ 
 console.log(thecountryname);
 let countryName=document.getElementById('countryName');
 countryName.innerHTML=`${event.target.value}`;
@@ -682,14 +681,15 @@ chartdiv.innerHTML='<div class="spinner-border spinner-border text-light"  style
 
 
 
-
+ // this is the master function which draw the charts and show all type of cases
+masterone();  
 // this help globe to animate to move that location which we selected 
-
-// gotto(intlatitude[0],intlongitude[0])
-});
  
   console.log(intlatitude);
 console.log(intlongitude);
+// gotto(intlatitude[0],intlongitude[0])
+});
+
 });
 
 
